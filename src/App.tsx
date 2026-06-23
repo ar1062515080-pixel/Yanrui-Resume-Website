@@ -13,6 +13,9 @@ function App() {
   const [language, setLanguage] = useState<Language>("en");
   const [activeSection, setActiveSection] = useState<SectionId | null>(null);
   const displayName = resume.profile.name[language];
+  const cvHref = `${import.meta.env.BASE_URL}${
+    language === "zh" ? "cv/Yanrui_Li_CV_CN.pdf" : "cv/Yanrui_Li_CV_EN.pdf"
+  }`;
 
   const selectedSection = activeSection
     ? resume.overviewSections.find((section) => section.id === activeSection)
@@ -79,8 +82,8 @@ function App() {
     <div id="top" className="min-h-screen overflow-x-hidden bg-[radial-gradient(circle_at_top_left,_#ffe4e6,_transparent_32%),linear-gradient(135deg,_#f8fafc_0%,_#fdf2f8_42%,_#e0f2fe_100%)] text-slate-900">
       <Navbar
         contactLabel={resume.ui.contactButton[language]}
+        cvHref={cvHref}
         downloadLabel={resume.ui.downloadButton[language]}
-        downloadNote={resume.ui.downloadNote[language]}
         language={language}
         languageLabel={resume.ui.languageLabel[language]}
         name={displayName}
@@ -93,8 +96,8 @@ function App() {
       <main>
         <Hero
           contactLabel={resume.ui.contactButton[language]}
+          cvHref={cvHref}
           downloadLabel={resume.ui.downloadButton[language]}
-          downloadNote={resume.ui.downloadNote[language]}
           heroDeckLabel={resume.ui.heroDeckLabel[language]}
           heroDeckText={resume.ui.heroDeckText[language]}
           heroDeckWords={resume.ui.heroDeckWords[language]}

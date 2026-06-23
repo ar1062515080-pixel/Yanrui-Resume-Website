@@ -101,10 +101,6 @@ export const resume = {
       en: "Download CV",
       zh: "下载简历",
     },
-    downloadNote: {
-      en: "PDF coming soon",
-      zh: "PDF 即将添加",
-    },
     heroDeckLabel: {
       en: "Personal Brand",
       zh: "个人品牌",

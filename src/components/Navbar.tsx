@@ -3,8 +3,8 @@ import { LanguageToggle } from "./LanguageToggle";
 
 interface NavbarProps {
   contactLabel: string;
+  cvHref: string;
   downloadLabel: string;
-  downloadNote: string;
   language: Language;
   languageLabel: string;
   name: string;
@@ -16,8 +16,8 @@ interface NavbarProps {
 
 export function Navbar({
   contactLabel,
+  cvHref,
   downloadLabel,
-  downloadNote,
   language,
   languageLabel,
   name,
@@ -67,16 +67,13 @@ export function Navbar({
           >
             {contactLabel}
           </button>
-          <button
-            aria-describedby="download-cv-note"
+          <a
             className="hidden rounded-full bg-slate-950 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-slate-900/15 transition hover:-translate-y-0.5 hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-500 md:inline-flex"
-            type="button"
+            download
+            href={cvHref}
           >
             {downloadLabel}
-          </button>
-          <span className="sr-only" id="download-cv-note">
-            {downloadNote}
-          </span>
+          </a>
         </div>
       </nav>
     </header>

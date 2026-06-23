@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 
 interface HeroProps {
   contactLabel: string;
+  cvHref: string;
   downloadLabel: string;
-  downloadNote: string;
   heroDeckLabel: string;
   heroDeckText: string;
   heroDeckWords: string[];
@@ -17,8 +17,8 @@ interface HeroProps {
 
 export function Hero({
   contactLabel,
+  cvHref,
   downloadLabel,
-  downloadNote,
   heroDeckLabel,
   heroDeckText,
   heroDeckWords,
@@ -137,16 +137,13 @@ export function Hero({
               >
                 {contactLabel}
               </button>
-              <button
-                aria-describedby="hero-download-note"
+              <a
                 className="h-14 rounded-full border border-[rgba(255,255,255,0.75)] bg-[rgba(255,255,255,0.85)] px-7 text-[18px] font-bold text-[#13213A] shadow-[0_12px_32px_rgba(7,17,38,0.08)] backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C75C7E]"
-                type="button"
+                download
+                href={cvHref}
               >
                 {downloadLabel}
-              </button>
-              <span className="sr-only" id="hero-download-note">
-                {downloadNote}
-              </span>
+              </a>
             </div>
           </div>
         </motion.div>
