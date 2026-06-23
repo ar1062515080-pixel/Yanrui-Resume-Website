@@ -27,6 +27,7 @@ function App() {
             <div className="space-y-5">
               <ProfilePhoto
                 alt={displayName}
+                className="lg:max-w-[360px]"
                 fallbackLabel={resume.ui.heroDeckLabel[language]}
                 fallbackWords={resume.ui.heroDeckWords[language]}
                 src={resume.profile.profilePhoto}

@@ -35,7 +35,7 @@ export function Hero({
       <div className="absolute left-1/2 top-10 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-rose-200/50 blur-3xl" />
       <div className="absolute right-4 top-36 -z-10 h-72 w-72 rounded-full bg-sky-200/50 blur-3xl" />
 
-      <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.08fr_0.92fr]">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[minmax(0,1.3fr)_minmax(300px,0.7fr)]">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -74,7 +74,7 @@ export function Hero({
         </motion.div>
 
         <motion.div
-          className="relative"
+          className="relative mx-auto w-full max-w-[320px] sm:max-w-[380px] lg:ml-auto lg:max-w-[400px]"
           initial={{ opacity: 0, scale: 0.96, y: 24 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ delay: 0.15, duration: 0.75, ease: "easeOut" }}
@@ -85,7 +85,7 @@ export function Hero({
             fallbackWords={heroDeckWords}
             src={profilePhotoSrc}
           />
-          <div className="absolute -bottom-6 left-6 right-6 rounded-3xl border border-white/70 bg-white/75 p-5 shadow-xl shadow-slate-900/10 backdrop-blur-2xl">
+          <div className="mx-auto mt-4 rounded-3xl border border-white/70 bg-white/75 p-4 shadow-xl shadow-slate-900/10 backdrop-blur-2xl">
             <p className="text-sm font-semibold leading-6 text-slate-600">{heroDeckText}</p>
           </div>
         </motion.div>

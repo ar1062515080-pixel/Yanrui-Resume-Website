@@ -17,14 +17,14 @@ export function ProfilePhoto({ alt, className = "", fallbackLabel, fallbackWords
 
   return (
     <motion.div
-      className={`group relative overflow-hidden rounded-[2rem] border border-white/60 bg-white/55 p-3 shadow-2xl shadow-slate-900/10 backdrop-blur-2xl ${className}`}
+      className={`group relative mx-auto w-full max-w-[320px] overflow-hidden rounded-[2rem] border border-white/60 bg-white/55 p-3 shadow-2xl shadow-slate-900/10 backdrop-blur-2xl sm:max-w-[380px] lg:max-w-[400px] ${className}`}
       whileHover={{ y: -6, scale: 1.01 }}
       transition={{ duration: 0.25, ease: "easeOut" }}
     >
       {!hasImageError ? (
         <img
           alt={alt}
-          className="aspect-[4/5] w-full rounded-[1.45rem] object-cover shadow-inner transition duration-500 group-hover:scale-[1.02]"
+          className="block h-auto w-full rounded-[1.45rem] object-contain shadow-inner transition duration-500 group-hover:scale-[1.01]"
           onError={() => setHasImageError(true)}
           src={resolvedSrc}
         />
