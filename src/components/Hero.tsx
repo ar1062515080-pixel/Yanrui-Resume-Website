@@ -87,19 +87,32 @@ export function Hero({
             >
               {name}
             </h1>
-            <div className="relative mt-8 space-y-2">
-              {heroDeckWords.map((word, index) => (
-                <p
-                  key={word}
-                  className={`font-bold leading-[1.25] tracking-[-0.015em] ${
-                    isChinese ? "text-[30px] sm:text-[36px]" : "text-[28px] sm:text-[34px]"
-                  }`}
-                  style={{ color: keywordColors[index % keywordColors.length] }}
-                >
-                  {word}
-                </p>
-              ))}
-            </div>
+            {isChinese ? (
+              <div className="relative mt-8 flex flex-wrap justify-center gap-x-3 gap-y-2 text-[30px] font-bold leading-[1.25] tracking-[-0.015em] sm:text-[36px] lg:justify-end lg:whitespace-nowrap">
+                {heroDeckWords.map((word, index) => (
+                  <span className="inline-flex items-center gap-x-3" key={word}>
+                    {index > 0 ? (
+                      <span className="text-[#94A3B8]" aria-hidden="true">
+                        &middot;
+                      </span>
+                    ) : null}
+                    <span style={{ color: keywordColors[index % keywordColors.length] }}>{word}</span>
+                  </span>
+                ))}
+              </div>
+            ) : (
+              <div className="relative mt-8 space-y-2">
+                {heroDeckWords.map((word, index) => (
+                  <p
+                    key={word}
+                    className="text-[28px] font-bold leading-[1.25] tracking-[-0.015em] sm:text-[34px]"
+                    style={{ color: keywordColors[index % keywordColors.length] }}
+                  >
+                    {word}
+                  </p>
+                ))}
+              </div>
+            )}
             <p
               className={`relative mt-8 font-medium leading-[1.7] text-[#475569] ${
                 isChinese ? "text-[18px] sm:text-[21px]" : "text-[18px] sm:text-[20px]"
