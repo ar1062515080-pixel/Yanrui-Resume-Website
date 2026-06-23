@@ -48,7 +48,7 @@ export const resume = {
       en: "Yanrui Li",
       zh: "李沿睿",
     },
-    bilingualName: "Yanrui Li / 李沿睿",
+    profilePhoto: "/images/profile.jpg",
     location: {
       en: "Adelaide, South Australia",
       zh: "澳大利亚南澳州阿德莱德",

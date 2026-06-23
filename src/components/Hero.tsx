@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { ProfilePhoto } from "./ProfilePhoto";
 
 interface HeroProps {
   contactLabel: string;
@@ -9,6 +10,7 @@ interface HeroProps {
   heroDeckWords: string[];
   location: string;
   name: string;
+  profilePhotoSrc: string;
   summary: string;
   tagline: string;
   onContactClick: () => void;
@@ -23,6 +25,7 @@ export function Hero({
   heroDeckWords,
   location,
   name,
+  profilePhotoSrc,
   summary,
   tagline,
   onContactClick,
@@ -76,24 +79,14 @@ export function Hero({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ delay: 0.15, duration: 0.75, ease: "easeOut" }}
         >
-          <div className="rounded-[2rem] border border-white/60 bg-white/55 p-6 shadow-2xl shadow-slate-900/10 backdrop-blur-2xl">
-            <div className="rounded-[1.5rem] bg-gradient-to-br from-slate-950 via-slate-800 to-rose-900 p-8 text-white">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-rose-100/80">
-                {heroDeckLabel}
-              </p>
-              <div className="mt-14 space-y-6">
-                <div>
-                  {heroDeckWords.map((word, index) => (
-                    <p className={`text-4xl font-black ${index === 1 ? "text-rose-200" : ""}`} key={word}>
-                      {word}
-                    </p>
-                  ))}
-                </div>
-                <p className="max-w-sm text-sm leading-6 text-slate-200">
-                  {heroDeckText}
-                </p>
-              </div>
-            </div>
+          <ProfilePhoto
+            alt={name}
+            fallbackLabel={heroDeckLabel}
+            fallbackWords={heroDeckWords}
+            src={profilePhotoSrc}
+          />
+          <div className="absolute -bottom-6 left-6 right-6 rounded-3xl border border-white/70 bg-white/75 p-5 shadow-xl shadow-slate-900/10 backdrop-blur-2xl">
+            <p className="text-sm font-semibold leading-6 text-slate-600">{heroDeckText}</p>
           </div>
         </motion.div>
       </div>
