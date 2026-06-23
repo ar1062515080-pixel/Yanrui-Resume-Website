@@ -265,7 +265,7 @@ export const resume = {
         zh: ["战略传播", "公共关系", "社交媒体管理", "数字叙事", "全球劳动力管理"],
       },
       logo: {
-        src: "/logos/adelaide-university.png",
+        src: "/logos/adelaide-university.jpg",
         fallback: "UA",
       },
     },
@@ -297,7 +297,7 @@ export const resume = {
         zh: ["网络营销", "市场营销", "消费者行为学", "Python 程序设计", "数据库原理"],
       },
       logo: {
-        src: "/logos/cuit.png",
+        src: "/logos/cuit.jpg",
         fallback: "CUIT",
       },
     },
