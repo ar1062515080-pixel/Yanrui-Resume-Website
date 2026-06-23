@@ -48,10 +48,14 @@ export const resume = {
       en: "Yanrui Li",
       zh: "李沿睿",
     },
-    profilePhoto: "/images/profile.JPG",
+    profilePhoto: "/images/profile.JPG?v=hero2",
     location: {
       en: "Adelaide, South Australia",
       zh: "澳大利亚南澳州阿德莱德",
+    },
+    heroLocation: {
+      en: "Adelaide, South Australia",
+      zh: "南澳大利亚州阿德莱德",
     },
     tagline: {
       en: "Strategic Communication · Social Media Operations · Bilingual Content Marketing",

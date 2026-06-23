@@ -118,7 +118,7 @@ function App() {
           heroDeckLabel={resume.ui.heroDeckLabel[language]}
           heroDeckText={resume.ui.heroDeckText[language]}
           heroDeckWords={resume.ui.heroDeckWords[language]}
-          location={resume.profile.location[language]}
+          location={resume.profile.heroLocation[language]}
           name={displayName}
           onContactClick={() => setActiveSection("contact")}
           profilePhotoSrc={resume.profile.profilePhoto}
