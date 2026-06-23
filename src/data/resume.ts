@@ -48,7 +48,6 @@ export const resume = {
       en: "Yanrui Li",
       zh: "李沿睿",
     },
-    profilePhoto: "/images/profile.JPG",
     location: {
       en: "Adelaide, South Australia",
       zh: "澳大利亚南澳州阿德莱德",
@@ -88,7 +87,7 @@ export const resume = {
       zh: "个人品牌",
     },
     heroDeckWords: {
-      en: ["Strategic", "Bilingual", "Digital"],
+      en: ["Strategic Thinking", "Bilingual Communication", "Digital Operations"],
       zh: ["策略思维", "双语传播", "数字运营"],
     },
     heroDeckText: {
