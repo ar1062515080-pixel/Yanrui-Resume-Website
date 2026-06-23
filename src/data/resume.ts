@@ -501,7 +501,7 @@ export const resume = {
           "提出执行规划思路。",
         ],
       },
-      imageUrl: "/projects/ade.jpg",
+      imageUrl: "/projects/adl.jpg",
       pdfUrl: "/projects/city-of-adelaide-strategic-narrative-proposal.pdf",
     },
   ] satisfies Project[],
