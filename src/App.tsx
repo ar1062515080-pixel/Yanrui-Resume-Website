@@ -4,6 +4,7 @@ import { DetailPanel } from "./components/DetailPanel";
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 import { OverviewCard } from "./components/OverviewCard";
+import { ProfilePhoto } from "./components/ProfilePhoto";
 import { ProjectCard } from "./components/ProjectCard";
 import { SkillCloud } from "./components/SkillCloud";
 import { Timeline } from "./components/Timeline";
@@ -12,6 +13,7 @@ import { type Language, type SectionId, resume } from "./data/resume";
 function App() {
   const [language, setLanguage] = useState<Language>("en");
   const [activeSection, setActiveSection] = useState<SectionId | null>(null);
+  const displayName = resume.profile.name[language];
 
   const selectedSection = activeSection
     ? resume.overviewSections.find((section) => section.id === activeSection)
@@ -21,16 +23,24 @@ function App() {
     switch (activeSection) {
       case "about":
         return (
-          <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
+            <div className="space-y-5">
+              <ProfilePhoto
+                alt={displayName}
+                fallbackLabel={resume.ui.heroDeckLabel[language]}
+                fallbackWords={resume.ui.heroDeckWords[language]}
+                src={resume.profile.profilePhoto}
+              />
+            </div>
             <div className="rounded-[1.5rem] bg-gradient-to-br from-slate-950 to-rose-900 p-8 text-white shadow-xl shadow-slate-900/15">
               <p className="text-sm font-semibold uppercase tracking-[0.25em] text-rose-100/80">
                 {resume.profile.location[language]}
               </p>
-              <h3 className="mt-8 text-4xl font-black">{resume.profile.bilingualName}</h3>
+              <h3 className="mt-8 text-4xl font-black">{displayName}</h3>
               <p className="mt-4 text-lg font-semibold text-rose-100">{resume.profile.tagline[language]}</p>
-            </div>
-            <div className="rounded-[1.5rem] border border-white/60 bg-white/60 p-6 shadow-sm shadow-slate-900/5">
-              <p className="text-lg leading-9 text-slate-600">{resume.profile.summary[language]}</p>
+              <div className="mt-8 rounded-[1.25rem] border border-white/15 bg-white/10 p-5">
+                <p className="text-lg leading-9 text-slate-100">{resume.profile.summary[language]}</p>
+              </div>
             </div>
           </div>
         );
@@ -93,6 +103,7 @@ function App() {
         downloadNote={resume.ui.downloadNote[language]}
         language={language}
         languageLabel={resume.ui.languageLabel[language]}
+        name={displayName}
         navLabel={resume.ui.navLabel[language]}
         onLanguageChange={setLanguage}
         onOpenSection={setActiveSection}
@@ -108,8 +119,9 @@ function App() {
           heroDeckText={resume.ui.heroDeckText[language]}
           heroDeckWords={resume.ui.heroDeckWords[language]}
           location={resume.profile.location[language]}
-          name={resume.profile.bilingualName}
+          name={displayName}
           onContactClick={() => setActiveSection("contact")}
+          profilePhotoSrc={resume.profile.profilePhoto}
           summary={resume.profile.summary[language]}
           tagline={resume.profile.tagline[language]}
         />

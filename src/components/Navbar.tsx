@@ -7,6 +7,7 @@ interface NavbarProps {
   downloadNote: string;
   language: Language;
   languageLabel: string;
+  name: string;
   navLabel: string;
   sections: OverviewSection[];
   onLanguageChange: (language: Language) => void;
@@ -19,6 +20,7 @@ export function Navbar({
   downloadNote,
   language,
   languageLabel,
+  name,
   navLabel,
   sections,
   onLanguageChange,
@@ -38,7 +40,7 @@ export function Navbar({
             YL
           </span>
           <span className="hidden leading-tight sm:block">
-            <span className="block text-sm font-bold text-slate-950">Yanrui Li</span>
+            <span className="block text-sm font-bold text-slate-950">{name}</span>
             <span className="block text-xs text-slate-500">Interactive Resume</span>
           </span>
         </a>
