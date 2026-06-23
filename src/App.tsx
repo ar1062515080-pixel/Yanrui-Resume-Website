@@ -125,15 +125,17 @@ function App() {
           keepSentenceOnDesktop={language === "zh"}
         />
 
-        <section className="px-4 pb-14 sm:px-6 lg:px-8" id="about-summary">
+        <section className="px-4 pb-16 pt-2 sm:px-6 lg:px-8" id="about-summary">
           <div className="mx-auto max-w-7xl">
-            <div className="rounded-[2rem] border border-white/60 bg-white/55 p-6 shadow-xl shadow-slate-900/5 backdrop-blur-2xl sm:p-8 lg:p-10">
-              <p className="text-sm font-bold uppercase tracking-[0.25em] text-rose-700">
+            <div className="max-w-[1060px]">
+              <p className="text-sm font-bold uppercase tracking-[0.28em] text-rose-700">
                 {resume.ui.aboutHeading[language]}
               </p>
-              <p className="mt-5 max-w-5xl text-lg leading-9 text-slate-600">
-                {resume.profile.summary[language]}
-              </p>
+              <div className="mt-6 space-y-4 text-lg leading-9 text-slate-600 sm:text-xl">
+                {resume.profile.summaryLines[language].map((line) => (
+                  <p key={line}>{line}</p>
+                ))}
+              </div>
             </div>
           </div>
         </section>

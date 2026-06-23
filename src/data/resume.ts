@@ -65,6 +65,18 @@ export const resume = {
       en: "Master of Communication from Adelaide University, specialising in Strategic Communication. Experienced in WeChat Official Account, RedNote/Xiaohongshu, WeChat Video Account, Weibo, bilingual copywriting, short-form video production, content planning, social media operations, PR campaign execution, and digital marketing. Native Mandarin speaker with professional English communication ability.",
       zh: "阿德莱德大学传播学硕士，主修战略传播。具备微信公众号、小红书、微信视频号、微博等平台运营经验，熟悉双语文案、短视频制作、内容策划、社交媒体运营、公关活动执行与数字营销。普通话为母语，具备专业英语沟通能力。",
     },
+    summaryLines: {
+      en: [
+        "Master of Communication from Adelaide University, specialising in Strategic Communication.",
+        "Experienced in WeChat Official Account, RedNote/Xiaohongshu, WeChat Video Account, Weibo, bilingual copywriting, short-form video production, content planning, social media operations, PR campaign execution, and digital marketing.",
+        "Native Mandarin speaker with professional English communication ability.",
+      ],
+      zh: [
+        "阿德莱德大学传播学硕士，主修战略传播。",
+        "具备微信公众号、小红书、微信视频号、微博等平台运营经验，熟悉双语文案、短视频制作、内容策划、社交媒体运营、公关活动执行与数字营销。",
+        "普通话为母语，具备专业英语沟通能力。",
+      ],
+    },
   },
   ui: {
     navLabel: {
