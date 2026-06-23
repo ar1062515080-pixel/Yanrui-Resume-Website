@@ -45,7 +45,10 @@ function App() {
                 highlights={project.highlights[language]}
                 highlightsLabel={resume.ui.highlights[language]}
                 key={project.title.en}
+                language={language}
+                pdfUrl={project.pdfUrl}
                 title={project.title[language]}
+                websiteUrl={project.websiteUrl}
               />
             ))}
           </div>

@@ -32,6 +32,8 @@ export interface Project {
   title: Localized;
   description: Localized;
   highlights: Localized<string[]>;
+  websiteUrl?: string;
+  pdfUrl?: string;
 }
 
 export interface SkillGroup {
@@ -452,7 +454,7 @@ export const resume = {
     {
       title: {
         en: "Guerlain Chinese New Year “Winner Party” Integrated Marketing Campaign",
-        zh: "娇兰春节“好运赢家派对”整合营销活动",
+        zh: "娇兰新年「好事赢家派对」整合传播项目",
       },
       description: {
         en: "Luxury brand campaign execution supporting storytelling, media coordination, KOL communication, and audience engagement.",
@@ -472,6 +474,7 @@ export const resume = {
           "参与奢侈品牌叙事与受众互动策略落地。",
         ],
       },
+      websiteUrl: "https://www.onsiteclub.com/case/Guerlain-Annual-Party-Shanghai-2026-1-18",
     },
     {
       title: {
@@ -496,6 +499,7 @@ export const resume = {
           "提出执行规划思路。",
         ],
       },
+      pdfUrl: "/projects/city-of-adelaide-strategic-narrative-proposal.pdf",
     },
   ] satisfies Project[],
   skillGroups: [
