@@ -70,19 +70,19 @@ export function Hero({
         </motion.div>
 
         <motion.div
-          className="relative bg-[linear-gradient(135deg,_#F8EEF3_0%,_#F6F1F7_45%,_#EDF4FF_100%)] px-6 py-10 text-center font-['Inter','Helvetica_Neue',Arial,'Noto_Sans_SC','PingFang_SC','Microsoft_YaHei',sans-serif] sm:px-10 lg:flex lg:h-full lg:items-center lg:justify-start lg:px-0 lg:py-0 lg:text-left"
+          className="relative bg-[linear-gradient(135deg,_#F8EEF3_0%,_#F6F1F7_45%,_#EDF4FF_100%)] px-6 py-10 text-center font-['Inter','Helvetica_Neue',Arial,'Noto_Sans_SC','PingFang_SC','Microsoft_YaHei',sans-serif] sm:px-10 lg:flex lg:h-full lg:items-center lg:justify-end lg:px-0 lg:py-0 lg:text-right"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15, duration: 0.75, ease: "easeOut" }}
         >
           <div className="absolute right-12 top-12 hidden h-20 w-20 rounded-full bg-white/35 blur-xl lg:block" />
-          <div className="mx-auto w-full max-w-[620px] lg:ml-[9%] lg:mr-auto lg:max-w-[620px] xl:ml-[10%]">
+          <div className="mx-auto w-full max-w-[620px] lg:ml-auto lg:mr-[6vw] lg:max-w-[620px] xl:mr-[7vw]">
             <span className="relative inline-flex rounded-full border border-[rgba(255,255,255,0.65)] bg-[rgba(255,255,255,0.72)] px-5 py-2.5 text-[18px] font-semibold text-[#475569] shadow-[0_10px_30px_rgba(7,17,38,0.06)] backdrop-blur-xl">
               {location}
             </span>
             <h1
               className={`relative mt-7 font-extrabold leading-[1.05] tracking-[-0.045em] text-[#071126] ${
-                isChinese ? "text-[70px] sm:text-[84px]" : "text-[56px] sm:text-[72px]"
+                isChinese ? "text-[72px] sm:text-[88px]" : "text-[60px] sm:text-[80px]"
               }`}
             >
               {name}
@@ -92,7 +92,7 @@ export function Hero({
                 <p
                   key={word}
                   className={`font-bold leading-[1.25] tracking-[-0.015em] ${
-                    isChinese ? "text-[28px] sm:text-[32px]" : "text-[26px] sm:text-[30px]"
+                    isChinese ? "text-[30px] sm:text-[36px]" : "text-[28px] sm:text-[34px]"
                   }`}
                   style={{ color: keywordColors[index % keywordColors.length] }}
                 >
@@ -102,13 +102,13 @@ export function Hero({
             </div>
             <p
               className={`relative mt-8 font-medium leading-[1.7] text-[#475569] ${
-                isChinese ? "text-[18px] sm:text-[20px]" : "text-[17px] sm:text-[18px]"
+                isChinese ? "text-[18px] sm:text-[21px]" : "text-[18px] sm:text-[20px]"
               } ${keepSentenceOnDesktop ? "lg:whitespace-nowrap lg:text-[17px] xl:text-[18px]" : ""}`}
             >
               {heroDeckText}
             </p>
 
-            <div className="relative mt-9 flex flex-col justify-center gap-3 sm:flex-row lg:justify-start">
+            <div className="relative mt-9 flex flex-col justify-center gap-3 sm:flex-row lg:justify-end">
               <button
                 className="h-14 rounded-full bg-[#071126] px-7 text-[18px] font-bold text-white shadow-[0_18px_45px_rgba(7,17,38,0.16)] transition hover:-translate-y-1 hover:bg-[#13213A] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C75C7E]"
                 onClick={onContactClick}
