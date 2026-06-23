@@ -1,9 +1,11 @@
+import { useState } from "react";
 import type { Language } from "../data/resume";
 
 interface ProjectCardProps {
   description: string;
   highlights: string[];
   highlightsLabel: string;
+  imageUrl: string;
   language: Language;
   pdfUrl?: string;
   title: string;
@@ -23,10 +25,6 @@ const actionLabels = {
     en: "Open project",
     zh: "打开项目",
   },
-  project: {
-    en: "Selected Project",
-    zh: "精选项目",
-  },
 } satisfies Record<string, Record<Language, string>>;
 
 function resolveHref(href: string) {
@@ -37,28 +35,40 @@ export function ProjectCard({
   description,
   highlights,
   highlightsLabel,
+  imageUrl,
   language,
   pdfUrl,
   title,
   websiteUrl,
 }: ProjectCardProps) {
+  const [hasImageError, setHasImageError] = useState(false);
   const primaryHref = websiteUrl ?? pdfUrl;
+  const resolvedImageUrl = resolveHref(imageUrl);
 
   const visual = (
-    <div className="group relative overflow-hidden rounded-[1.25rem] bg-[linear-gradient(135deg,_#F8EEF3_0%,_#F6F1F7_45%,_#EDF4FF_100%)] p-5 shadow-sm shadow-slate-900/5 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-900/10">
-      <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-rose-200/50 blur-2xl" />
-      <div className="absolute -bottom-12 -left-10 h-32 w-32 rounded-full bg-sky-200/60 blur-2xl" />
-      <div className="relative min-h-32 rounded-2xl border border-white/60 bg-white/35 p-5 backdrop-blur-sm">
-        <p className="text-xs font-bold uppercase tracking-[0.25em] text-rose-700">
-          {actionLabels.project[language]}
-        </p>
-        <p className="mt-5 max-w-md text-xl font-black leading-tight text-slate-950">{title}</p>
-        {primaryHref ? (
-          <span className="mt-6 inline-flex rounded-full bg-white/75 px-4 py-2 text-sm font-bold text-slate-700 shadow-sm shadow-slate-900/5 transition group-hover:bg-white">
-            {actionLabels.visual[language]}
-          </span>
-        ) : null}
-      </div>
+    <div className="group relative h-56 overflow-hidden rounded-[1.25rem] bg-white/70 shadow-sm shadow-slate-900/5 transition hover:-translate-y-1 hover:shadow-lg hover:shadow-slate-900/10 sm:h-64">
+      {!hasImageError ? (
+        <img
+          alt=""
+          className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+          onError={() => setHasImageError(true)}
+          src={resolvedImageUrl}
+        />
+      ) : (
+        <div className="grid h-full w-full place-items-center bg-white/70 p-6 text-center">
+          <div>
+            <p className="text-sm font-black text-slate-950">{title}</p>
+            <p className="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+              {actionLabels.visual[language]}
+            </p>
+          </div>
+        </div>
+      )}
+      {primaryHref ? (
+        <span className="absolute bottom-4 right-4 rounded-full bg-white/85 px-4 py-2 text-xs font-bold text-slate-700 shadow-sm shadow-slate-900/10 backdrop-blur-md transition group-hover:bg-white">
+          {actionLabels.visual[language]}
+        </span>
+      ) : null}
     </div>
   );
 

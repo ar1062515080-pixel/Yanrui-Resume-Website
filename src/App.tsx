@@ -44,6 +44,7 @@ function App() {
                 description={project.description[language]}
                 highlights={project.highlights[language]}
                 highlightsLabel={resume.ui.highlights[language]}
+                imageUrl={project.imageUrl}
                 key={project.title.en}
                 language={language}
                 pdfUrl={project.pdfUrl}

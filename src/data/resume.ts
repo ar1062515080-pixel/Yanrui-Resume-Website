@@ -32,6 +32,7 @@ export interface Project {
   title: Localized;
   description: Localized;
   highlights: Localized<string[]>;
+  imageUrl: string;
   websiteUrl?: string;
   pdfUrl?: string;
 }
@@ -474,6 +475,7 @@ export const resume = {
           "参与奢侈品牌叙事与受众互动策略落地。",
         ],
       },
+      imageUrl: "/projects/GUERLAIN.JPG",
       websiteUrl: "https://www.onsiteclub.com/case/Guerlain-Annual-Party-Shanghai-2026-1-18",
     },
     {
@@ -499,6 +501,7 @@ export const resume = {
           "提出执行规划思路。",
         ],
       },
+      imageUrl: "/projects/ade。JPG",
       pdfUrl: "/projects/city-of-adelaide-strategic-narrative-proposal.pdf",
     },
   ] satisfies Project[],
