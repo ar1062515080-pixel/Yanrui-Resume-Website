@@ -40,14 +40,13 @@ export function Hero({
       <div className="absolute left-1/2 top-10 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-rose-200/50 blur-3xl" />
       <div className="absolute right-4 top-36 -z-10 h-72 w-72 rounded-full bg-sky-200/50 blur-3xl" />
 
-      <div className="mx-auto grid w-full max-w-[1500px] overflow-hidden rounded-[2.5rem] bg-[linear-gradient(90deg,_rgba(255,255,255,0)_0%,_rgba(251,231,239,0.55)_42%,_rgba(251,231,239,0.82)_58%,_rgba(220,238,255,0.96)_100%)] shadow-2xl shadow-slate-900/10 lg:min-h-[620px] lg:grid-cols-[0.46fr_0.54fr]">
+      <div className="mx-auto grid w-full max-w-[1500px] overflow-hidden rounded-[2.5rem] bg-[linear-gradient(90deg,_rgba(255,255,255,0)_0%,_rgba(251,231,239,0.55)_42%,_rgba(251,231,239,0.82)_58%,_rgba(220,238,255,0.96)_100%)] p-3 shadow-2xl shadow-slate-900/10 lg:min-h-[620px] lg:grid-cols-[0.46fr_0.54fr] lg:p-4">
         <motion.div
-          className="relative min-h-[420px] sm:min-h-[520px] lg:min-h-full"
+          className="relative min-h-[420px] overflow-hidden rounded-[2rem] sm:min-h-[520px] lg:min-h-full"
           initial={{ opacity: 0, scale: 0.96, y: 24 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <div className="absolute inset-y-0 right-0 z-10 hidden w-40 bg-[linear-gradient(90deg,_rgba(255,255,255,0)_0%,_rgba(251,231,239,0.72)_100%)] lg:block" />
           <div className="absolute inset-0 transition duration-300 hover:scale-[1.01]">
             {!hasPhotoError ? (
               <img
@@ -70,7 +69,7 @@ export function Hero({
         </motion.div>
 
         <motion.div
-          className="relative px-6 py-10 text-center sm:px-10 lg:flex lg:flex-col lg:items-end lg:justify-center lg:py-16 lg:pl-10 lg:pr-[8%] lg:text-right xl:pr-[9%]"
+          className="relative px-6 py-10 text-center font-['Inter','Helvetica_Neue',Arial,sans-serif] sm:px-10 lg:flex lg:flex-col lg:items-end lg:justify-center lg:py-16 lg:pl-10 lg:pr-[6.5%] lg:text-right xl:pr-[7.5%]"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15, duration: 0.75, ease: "easeOut" }}
@@ -79,14 +78,14 @@ export function Hero({
           <span className="relative inline-flex rounded-full border border-[rgba(255,255,255,0.65)] bg-[rgba(255,255,255,0.72)] px-4 py-2 text-sm font-semibold text-[#475569] shadow-[0_10px_30px_rgba(7,17,38,0.06)] backdrop-blur-xl">
             {location}
           </span>
-          <h1 className="relative mt-6 text-5xl font-black tracking-tight text-[#071126] sm:text-6xl lg:text-7xl">
+          <h1 className="relative mt-6 text-5xl font-extrabold leading-[0.95] tracking-[-0.04em] text-[#071126] sm:text-6xl lg:text-7xl">
             {name}
           </h1>
-          <div className="relative mt-8 space-y-2.5">
+          <div className="relative mt-8 space-y-1.5">
             {heroDeckWords.map((word, index) => (
               <p
                 key={word}
-                className="text-2xl font-black leading-tight sm:text-3xl lg:text-[2.15rem]"
+                className="text-2xl font-extrabold leading-[1.08] tracking-[-0.02em] sm:text-3xl lg:text-[2.05rem]"
                 style={{ color: keywordColors[index % keywordColors.length] }}
               >
                 {word}
@@ -94,8 +93,8 @@ export function Hero({
             ))}
           </div>
           <p
-            className={`relative mx-auto mt-7 max-w-2xl text-base leading-8 text-[#334155] sm:text-lg lg:mx-0 lg:text-right ${
-              keepSentenceOnDesktop ? "lg:max-w-none lg:whitespace-nowrap lg:text-[0.98rem] xl:text-base" : ""
+            className={`relative mx-auto mt-7 max-w-2xl text-base leading-8 text-[#475569] sm:text-lg lg:mx-0 lg:max-w-[540px] lg:text-right ${
+              keepSentenceOnDesktop ? "lg:max-w-none lg:whitespace-nowrap lg:text-[0.95rem] xl:text-[0.98rem]" : ""
             }`}
           >
             {heroDeckText}
