@@ -121,6 +121,7 @@ function App() {
           location={resume.profile.location[language]}
           name={displayName}
           onContactClick={() => setActiveSection("contact")}
+          profilePhotoSrc={resume.profile.profilePhoto}
           summary={resume.profile.summary[language]}
           tagline={resume.profile.tagline[language]}
         />

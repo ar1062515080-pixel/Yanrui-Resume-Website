@@ -10,6 +10,7 @@ interface HeroProps {
   heroDeckWords: string[];
   location: string;
   name: string;
+  profilePhotoSrc: string;
   summary: string;
   tagline: string;
   onContactClick: () => void;
@@ -24,6 +25,7 @@ export function Hero({
   heroDeckWords,
   location,
   name,
+  profilePhotoSrc,
   summary,
   tagline,
   onContactClick,
@@ -79,6 +81,8 @@ export function Hero({
         >
           <BrandCard
             label={heroDeckLabel}
+            photoAlt={name}
+            photoSrc={profilePhotoSrc}
             text={heroDeckText}
             words={heroDeckWords}
           />
