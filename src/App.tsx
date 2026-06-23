@@ -122,9 +122,9 @@ function App() {
               <p className="text-sm font-bold uppercase tracking-[0.25em] text-rose-700">
                 {resume.ui.overviewHeading[language]}
               </p>
-              <h2 className="mt-4 text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">
+              <p className="mt-4 max-w-2xl text-[16px] font-medium leading-[1.5] text-[#475569] sm:text-xl">
                 {resume.ui.overviewIntro[language]}
-              </h2>
+              </p>
             </div>
 
             <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">

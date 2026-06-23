@@ -127,7 +127,7 @@ export const resume = {
       zh: "浏览简历内容",
     },
     overviewIntro: {
-      en: "Open a card to view details.",
+      en: "Select a card to explore more details.",
       zh: "点击卡片查看详情",
     },
     current: {
