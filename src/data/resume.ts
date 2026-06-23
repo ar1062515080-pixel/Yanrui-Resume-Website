@@ -127,8 +127,8 @@ export const resume = {
       zh: "浏览简历内容",
     },
     overviewIntro: {
-      en: "Open each section to view education, experience, projects, skills, and contact details.",
-      zh: "点击下方卡片，查看教育背景、工作经历、精选项目、专业技能与联系方式。",
+      en: "Open a card to view details.",
+      zh: "点击卡片查看详情",
     },
     current: {
       en: "Current",
