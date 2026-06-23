@@ -37,11 +37,11 @@ export function Hero({
   const keywordColors = ["#6F5F8C", "#C75C7E", "#3B73B9"];
 
   return (
-    <section className="relative isolate overflow-hidden px-4 pb-10 pt-14 sm:px-6 lg:px-8 lg:pb-14 lg:pt-20">
+    <section className="relative isolate overflow-hidden px-5 pb-10 pt-14 sm:px-6 lg:px-8 lg:pb-14 lg:pt-20">
       <div className="absolute left-1/2 top-10 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-rose-200/50 blur-3xl" />
       <div className="absolute right-4 top-36 -z-10 h-72 w-72 rounded-full bg-sky-200/50 blur-3xl" />
 
-      <div className="mx-auto grid w-full max-w-[1520px] overflow-hidden rounded-[36px] bg-white shadow-2xl shadow-slate-900/10 lg:h-[620px] lg:grid-cols-[46%_54%]">
+      <div className="mx-auto grid w-full max-w-7xl overflow-hidden rounded-[36px] bg-white shadow-2xl shadow-slate-900/10 lg:h-[620px] lg:grid-cols-[46%_54%]">
         <motion.div
           className="relative min-h-[430px] overflow-hidden rounded-[36px] shadow-[0_20px_50px_rgba(7,17,38,0.08)] sm:min-h-[540px] lg:h-full lg:min-h-0"
           initial={{ opacity: 0, scale: 0.96, y: 24 }}
