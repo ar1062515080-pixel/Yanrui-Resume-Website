@@ -219,8 +219,8 @@ export const resume = {
         zh: "工具与能力",
       },
       summary: {
-        en: "Content strategy, analytics, platform operations, design tools, and bilingual communication.",
-        zh: "内容策略、数据分析、平台运营、设计工具与双语沟通能力。",
+        en: "Marketing · Social Media · AI Workflow",
+        zh: "营销传播 · 社交媒体 · AI 工作流",
       },
     },
     {
