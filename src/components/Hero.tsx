@@ -78,7 +78,7 @@ export function Hero({
         </motion.div>
 
         <motion.div
-          className="relative bg-[linear-gradient(135deg,_#F8EEF3_0%,_#F6F1F7_45%,_#EDF4FF_100%)] px-6 py-10 text-center font-['Inter','Helvetica_Neue',Arial,'Noto_Sans_SC','PingFang_SC','Microsoft_YaHei',sans-serif] sm:px-10 lg:flex lg:h-full lg:items-center lg:justify-end lg:px-0 lg:py-0 lg:text-right"
+          className="relative bg-[linear-gradient(135deg,_#F8EEF3_0%,_#F6F1F7_45%,_#EDF4FF_100%)] px-6 py-10 text-center font-['Inter','Helvetica_Neue',Arial,'Noto_Sans_SC','PingFang_SC','Microsoft_YaHei',sans-serif] sm:px-10 lg:flex lg:h-full lg:items-center lg:justify-end lg:py-0 lg:pl-12 lg:pr-0 lg:text-right xl:pl-14"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15, duration: 0.75, ease: "easeOut" }}
