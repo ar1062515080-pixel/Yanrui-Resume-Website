@@ -122,9 +122,20 @@ function App() {
           name={displayName}
           onContactClick={() => setActiveSection("contact")}
           profilePhotoSrc={resume.profile.profilePhoto}
-          summary={resume.profile.summary[language]}
-          tagline={resume.profile.tagline[language]}
         />
+
+        <section className="px-4 pb-14 sm:px-6 lg:px-8" id="about-summary">
+          <div className="mx-auto max-w-7xl">
+            <div className="rounded-[2rem] border border-white/60 bg-white/55 p-6 shadow-xl shadow-slate-900/5 backdrop-blur-2xl sm:p-8 lg:p-10">
+              <p className="text-sm font-bold uppercase tracking-[0.25em] text-rose-700">
+                {resume.ui.aboutHeading[language]}
+              </p>
+              <p className="mt-5 max-w-5xl text-lg leading-9 text-slate-600">
+                {resume.profile.summary[language]}
+              </p>
+            </div>
+          </div>
+        </section>
 
         <section className="px-4 pb-20 sm:px-6 lg:px-8" id="overview">
           <div className="mx-auto max-w-7xl">

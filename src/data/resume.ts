@@ -58,8 +58,8 @@ export const resume = {
       zh: "战略传播 · 社交媒体运营 · 双语内容营销",
     },
     summary: {
-      en: "Master of Communication student at Adelaide University specialising in Strategic Communication. Experienced in WeChat Official Account, RedNote/Xiaohongshu, WeChat Video Account, Weibo, bilingual copywriting, short-form video production, content planning, social media operations, PR campaign execution, and digital marketing. Native Mandarin speaker with professional English proficiency.",
-      zh: "阿德莱德大学传播学硕士在读，主修战略传播。具备微信公众号、小红书、微信视频号、微博等平台运营经验，熟悉双语文案、短视频制作、内容策划、社交媒体运营、公关活动执行与数字营销。普通话为母语，英语具备专业工作沟通能力。",
+      en: "Master of Communication from Adelaide University, specialising in Strategic Communication. Experienced in WeChat Official Account, RedNote/Xiaohongshu, WeChat Video Account, Weibo, bilingual copywriting, short-form video production, content planning, social media operations, PR campaign execution, and digital marketing. Native Mandarin speaker with professional English communication ability.",
+      zh: "阿德莱德大学传播学硕士，主修战略传播。具备微信公众号、小红书、微信视频号、微博等平台运营经验，熟悉双语文案、短视频制作、内容策划、社交媒体运营、公关活动执行与数字营销。普通话为母语，具备专业英语沟通能力。",
     },
   },
   ui: {
@@ -94,6 +94,10 @@ export const resume = {
     heroDeckText: {
       en: "Communication-focused portfolio spanning social platforms, public relations, short-form video, and digital campaign execution.",
       zh: "以传播为核心，覆盖社交平台运营、公共关系、短视频内容与数字营销执行。",
+    },
+    aboutHeading: {
+      en: "About Me",
+      zh: "关于我",
     },
     openDetails: {
       en: "Open details",
