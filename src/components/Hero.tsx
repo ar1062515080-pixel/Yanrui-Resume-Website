@@ -11,6 +11,7 @@ interface HeroProps {
   location: string;
   name: string;
   profilePhotoSrc: string;
+  keepSentenceOnDesktop?: boolean;
   onContactClick: () => void;
 }
 
@@ -24,6 +25,7 @@ export function Hero({
   location,
   name,
   profilePhotoSrc,
+  keepSentenceOnDesktop = false,
   onContactClick,
 }: HeroProps) {
   const [hasPhotoError, setHasPhotoError] = useState(false);
@@ -31,13 +33,18 @@ export function Hero({
     ? `${import.meta.env.BASE_URL.replace(/\/$/, "")}${profilePhotoSrc}`
     : profilePhotoSrc;
   const fallbackMark = name === "Yanrui Li" ? "YL" : name.slice(0, 1);
+  const keywordStyles = [
+    "from-slate-950 via-slate-800 to-blue-700",
+    "from-rose-600 via-fuchsia-600 to-indigo-600",
+    "from-sky-700 via-blue-600 to-slate-900",
+  ];
 
   return (
     <section className="relative isolate overflow-hidden px-4 pb-10 pt-14 sm:px-6 lg:px-8 lg:pb-14 lg:pt-20">
       <div className="absolute left-1/2 top-10 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-rose-200/50 blur-3xl" />
       <div className="absolute right-4 top-36 -z-10 h-72 w-72 rounded-full bg-sky-200/50 blur-3xl" />
 
-      <div className="mx-auto grid max-w-7xl overflow-hidden rounded-[2.5rem] bg-[linear-gradient(115deg,_#fff7f7_0%,_#fce7f3_38%,_#e0f2fe_100%)] shadow-2xl shadow-slate-900/10 lg:min-h-[620px] lg:grid-cols-[0.92fr_1.08fr]">
+      <div className="mx-auto grid w-full max-w-[1500px] overflow-hidden rounded-[2.5rem] bg-[linear-gradient(115deg,_#fff7f7_0%,_#fce7f3_38%,_#e0f2fe_100%)] shadow-2xl shadow-slate-900/10 lg:min-h-[620px] lg:grid-cols-[0.94fr_1.06fr]">
         <motion.div
           className="relative flex items-end justify-center px-6 pt-8 sm:px-10 lg:px-12 lg:pt-12"
           initial={{ opacity: 0, scale: 0.96, y: 24 }}
@@ -67,7 +74,7 @@ export function Hero({
         </motion.div>
 
         <motion.div
-          className="relative px-6 py-10 text-center sm:px-10 lg:flex lg:flex-col lg:items-end lg:justify-center lg:px-14 lg:py-16 lg:text-right"
+          className="relative px-6 py-10 text-center sm:px-10 lg:flex lg:flex-col lg:items-end lg:justify-center lg:py-16 lg:pl-10 lg:pr-[8%] lg:text-right xl:pr-[9%]"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15, duration: 0.75, ease: "easeOut" }}
@@ -79,14 +86,21 @@ export function Hero({
           <h1 className="relative mt-6 text-5xl font-black tracking-tight text-slate-950 sm:text-6xl lg:text-7xl">
             {name}
           </h1>
-          <div className="relative mt-8 space-y-2">
-            {heroDeckWords.map((word) => (
-              <p className="text-2xl font-black leading-tight text-slate-900 sm:text-3xl" key={word}>
+          <div className="relative mt-8 space-y-2.5">
+            {heroDeckWords.map((word, index) => (
+              <p
+                className={`bg-gradient-to-r ${keywordStyles[index % keywordStyles.length]} bg-clip-text text-2xl font-black leading-tight text-transparent drop-shadow-sm sm:text-3xl lg:text-[2.15rem]`}
+                key={word}
+              >
                 {word}
               </p>
             ))}
           </div>
-          <p className="relative mx-auto mt-7 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg lg:mx-0">
+          <p
+            className={`relative mx-auto mt-7 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg lg:mx-0 lg:text-right ${
+              keepSentenceOnDesktop ? "lg:max-w-none lg:whitespace-nowrap lg:text-[0.98rem] xl:text-base" : ""
+            }`}
+          >
             {heroDeckText}
           </p>
 

@@ -122,6 +122,7 @@ function App() {
           name={displayName}
           onContactClick={() => setActiveSection("contact")}
           profilePhotoSrc={resume.profile.profilePhoto}
+          keepSentenceOnDesktop={language === "zh"}
         />
 
         <section className="px-4 pb-14 sm:px-6 lg:px-8" id="about-summary">
