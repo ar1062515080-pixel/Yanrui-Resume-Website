@@ -566,6 +566,28 @@ export const resume = {
     },
     {
       title: {
+        en: "AI & Workflow Tools",
+        zh: "AI 与工作流工具",
+      },
+      skills: {
+        en: [
+          "Cursor",
+          "ChatGPT",
+          "AI-assisted Web Prototyping",
+          "Prompt-based Website Iteration",
+          "Content Ideation",
+        ],
+        zh: [
+          "Cursor",
+          "ChatGPT",
+          "AI 辅助网页原型搭建",
+          "提示词驱动的网站迭代",
+          "内容创意辅助",
+        ],
+      },
+    },
+    {
+      title: {
         en: "Social Media Platforms",
         zh: "社交媒体平台",
       },
