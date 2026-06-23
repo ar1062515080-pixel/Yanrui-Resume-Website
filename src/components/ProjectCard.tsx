@@ -43,6 +43,11 @@ export function ProjectCard({
 }: ProjectCardProps) {
   const [hasImageError, setHasImageError] = useState(false);
   const primaryHref = websiteUrl ?? pdfUrl;
+  const primaryLabel = websiteUrl
+    ? actionLabels.website[language]
+    : pdfUrl
+      ? actionLabels.pdf[language]
+      : actionLabels.visual[language];
   const resolvedImageUrl = resolveHref(imageUrl);
 
   const visual = (
@@ -59,14 +64,14 @@ export function ProjectCard({
           <div>
             <p className="text-sm font-black text-slate-950">{title}</p>
             <p className="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-              {actionLabels.visual[language]}
+              {primaryLabel}
             </p>
           </div>
         </div>
       )}
       {primaryHref ? (
         <span className="absolute bottom-4 right-4 rounded-full bg-white/85 px-4 py-2 text-xs font-bold text-slate-700 shadow-sm shadow-slate-900/10 backdrop-blur-md transition group-hover:bg-white">
-          {actionLabels.visual[language]}
+          {primaryLabel}
         </span>
       ) : null}
     </div>
@@ -76,7 +81,7 @@ export function ProjectCard({
     <article className="rounded-[1.5rem] border border-white/60 bg-white/60 p-6 shadow-sm shadow-slate-900/5">
       {primaryHref ? (
         <a
-          aria-label={`${actionLabels.visual[language]}: ${title}`}
+          aria-label={`${primaryLabel}: ${title}`}
           href={resolveHref(primaryHref)}
           rel="noopener noreferrer"
           target="_blank"
@@ -88,30 +93,6 @@ export function ProjectCard({
       )}
       <h3 className="mt-6 text-2xl font-black text-slate-950">{title}</h3>
       <p className="mt-4 text-sm leading-7 text-slate-600">{description}</p>
-      {(websiteUrl || pdfUrl) ? (
-        <div className="mt-5 flex flex-wrap gap-3">
-          {websiteUrl ? (
-            <a
-              className="rounded-full bg-slate-950 px-4 py-2 text-sm font-bold text-white shadow-lg shadow-slate-900/10 transition hover:-translate-y-0.5 hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-500"
-              href={resolveHref(websiteUrl)}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              {actionLabels.website[language]}
-            </a>
-          ) : null}
-          {pdfUrl ? (
-            <a
-              className="rounded-full border border-white/70 bg-white/75 px-4 py-2 text-sm font-bold text-slate-700 shadow-sm shadow-slate-900/5 transition hover:-translate-y-0.5 hover:bg-white hover:text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-500"
-              href={resolveHref(pdfUrl)}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              {actionLabels.pdf[language]}
-            </a>
-          ) : null}
-        </div>
-      ) : null}
       <p className="mt-6 text-sm font-bold uppercase tracking-[0.2em] text-slate-400">{highlightsLabel}</p>
       <ul className="mt-3 space-y-3">
         {highlights.map((highlight) => (
