@@ -94,6 +94,14 @@ export const resume = {
       en: "Communication-focused portfolio spanning social platforms, public relations, short-form video, and digital campaign execution.",
       zh: "以传播为核心，覆盖社交平台运营、公共关系、短视频内容与数字营销执行。",
     },
+    profilePlaceholderInitials: {
+      en: "YL",
+      zh: "李",
+    },
+    profilePlaceholderLabel: {
+      en: "Profile Photo Coming Soon",
+      zh: "个人照片即将更新",
+    },
     openDetails: {
       en: "Open details",
       zh: "查看详情",

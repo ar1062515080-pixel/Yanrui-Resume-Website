@@ -4,7 +4,7 @@ import { DetailPanel } from "./components/DetailPanel";
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 import { OverviewCard } from "./components/OverviewCard";
-import { BrandCard } from "./components/BrandCard";
+import { ProfilePlaceholder } from "./components/ProfilePlaceholder";
 import { ProjectCard } from "./components/ProjectCard";
 import { SkillCloud } from "./components/SkillCloud";
 import { Timeline } from "./components/Timeline";
@@ -25,11 +25,10 @@ function App() {
         return (
           <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
             <div className="space-y-5">
-              <BrandCard
-                className="lg:max-w-[420px]"
-                label={resume.ui.heroDeckLabel[language]}
-                text={resume.ui.heroDeckText[language]}
-                words={resume.ui.heroDeckWords[language]}
+              <ProfilePlaceholder
+                className="lg:max-w-[340px]"
+                initials={resume.ui.profilePlaceholderInitials[language]}
+                label={resume.ui.profilePlaceholderLabel[language]}
               />
             </div>
             <div className="rounded-[1.5rem] bg-gradient-to-br from-slate-950 to-rose-900 p-8 text-white shadow-xl shadow-slate-900/15">
@@ -115,12 +114,11 @@ function App() {
           contactLabel={resume.ui.contactButton[language]}
           downloadLabel={resume.ui.downloadButton[language]}
           downloadNote={resume.ui.downloadNote[language]}
-          heroDeckLabel={resume.ui.heroDeckLabel[language]}
-          heroDeckText={resume.ui.heroDeckText[language]}
-          heroDeckWords={resume.ui.heroDeckWords[language]}
           location={resume.profile.location[language]}
           name={displayName}
           onContactClick={() => setActiveSection("contact")}
+          profileInitials={resume.ui.profilePlaceholderInitials[language]}
+          profileLabel={resume.ui.profilePlaceholderLabel[language]}
           summary={resume.profile.summary[language]}
           tagline={resume.profile.tagline[language]}
         />
