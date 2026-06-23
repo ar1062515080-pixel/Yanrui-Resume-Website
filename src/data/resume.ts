@@ -22,6 +22,10 @@ export interface TimelineItem {
   period: Localized;
   location: Localized;
   details: Localized<string[]>;
+  logo?: {
+    src: string;
+    fallback: string;
+  };
 }
 
 export interface Project {
@@ -260,6 +264,10 @@ export const resume = {
         ],
         zh: ["战略传播", "公共关系", "社交媒体管理", "数字叙事", "全球劳动力管理"],
       },
+      logo: {
+        src: "/logos/adelaide-university.png",
+        fallback: "UA",
+      },
     },
     {
       title: {
@@ -287,6 +295,10 @@ export const resume = {
           "Database Principles",
         ],
         zh: ["网络营销", "市场营销", "消费者行为学", "Python 程序设计", "数据库原理"],
+      },
+      logo: {
+        src: "/logos/cuit.png",
+        fallback: "CUIT",
       },
     },
   ] satisfies TimelineItem[],
