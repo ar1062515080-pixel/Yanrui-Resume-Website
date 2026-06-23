@@ -1,14 +1,15 @@
 import { motion } from "framer-motion";
-import { ProfilePlaceholder } from "./ProfilePlaceholder";
+import { BrandCard } from "./BrandCard";
 
 interface HeroProps {
   contactLabel: string;
   downloadLabel: string;
   downloadNote: string;
+  heroDeckLabel: string;
+  heroDeckText: string;
+  heroDeckWords: string[];
   location: string;
   name: string;
-  profileInitials: string;
-  profileLabel: string;
   summary: string;
   tagline: string;
   onContactClick: () => void;
@@ -18,10 +19,11 @@ export function Hero({
   contactLabel,
   downloadLabel,
   downloadNote,
+  heroDeckLabel,
+  heroDeckText,
+  heroDeckWords,
   location,
   name,
-  profileInitials,
-  profileLabel,
   summary,
   tagline,
   onContactClick,
@@ -75,9 +77,10 @@ export function Hero({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ delay: 0.15, duration: 0.75, ease: "easeOut" }}
         >
-          <ProfilePlaceholder
-            initials={profileInitials}
-            label={profileLabel}
+          <BrandCard
+            label={heroDeckLabel}
+            text={heroDeckText}
+            words={heroDeckWords}
           />
         </motion.div>
       </div>
