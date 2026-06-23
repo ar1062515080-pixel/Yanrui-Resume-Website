@@ -33,31 +33,31 @@ export function Hero({
     ? `${import.meta.env.BASE_URL.replace(/\/$/, "")}${profilePhotoSrc}`
     : profilePhotoSrc;
   const fallbackMark = name === "Yanrui Li" ? "YL" : name.slice(0, 1);
-  const keywordColors = ["#071126", "#C75C7E", "#3B73B9"];
+  const keywordColors = ["#6F5F8C", "#C75C7E", "#3B73B9"];
 
   return (
     <section className="relative isolate overflow-hidden px-4 pb-10 pt-14 sm:px-6 lg:px-8 lg:pb-14 lg:pt-20">
       <div className="absolute left-1/2 top-10 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-rose-200/50 blur-3xl" />
       <div className="absolute right-4 top-36 -z-10 h-72 w-72 rounded-full bg-sky-200/50 blur-3xl" />
 
-      <div className="mx-auto grid w-full max-w-[1500px] overflow-hidden rounded-[2.5rem] bg-[linear-gradient(90deg,_rgba(255,255,255,0)_0%,_rgba(251,231,239,0.55)_42%,_rgba(251,231,239,0.82)_58%,_rgba(220,238,255,0.96)_100%)] shadow-2xl shadow-slate-900/10 lg:min-h-[620px] lg:grid-cols-[0.94fr_1.06fr]">
+      <div className="mx-auto grid w-full max-w-[1500px] overflow-hidden rounded-[2.5rem] bg-[linear-gradient(90deg,_rgba(255,255,255,0)_0%,_rgba(251,231,239,0.55)_42%,_rgba(251,231,239,0.82)_58%,_rgba(220,238,255,0.96)_100%)] shadow-2xl shadow-slate-900/10 lg:min-h-[620px] lg:grid-cols-[0.46fr_0.54fr]">
         <motion.div
-          className="relative flex items-end justify-center px-6 pt-8 sm:px-10 lg:px-12 lg:pt-12"
+          className="relative min-h-[420px] sm:min-h-[520px] lg:min-h-full"
           initial={{ opacity: 0, scale: 0.96, y: 24 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <div className="absolute inset-y-0 right-0 hidden w-32 bg-[linear-gradient(90deg,_rgba(255,255,255,0)_0%,_rgba(251,231,239,0.7)_100%)] lg:block" />
-          <div className="relative w-full max-w-sm transition duration-300 hover:-translate-y-1 sm:max-w-md lg:max-w-[500px]">
+          <div className="absolute inset-y-0 right-0 z-10 hidden w-40 bg-[linear-gradient(90deg,_rgba(255,255,255,0)_0%,_rgba(251,231,239,0.72)_100%)] lg:block" />
+          <div className="absolute inset-0 transition duration-300 hover:scale-[1.01]">
             {!hasPhotoError ? (
               <img
                 alt={name}
-                className="block h-auto max-h-[560px] w-full rounded-[2rem] object-contain shadow-2xl shadow-slate-900/15"
+                className="h-full w-full object-cover object-center"
                 onError={() => setHasPhotoError(true)}
                 src={resolvedPhotoSrc}
               />
             ) : (
-              <div className="grid aspect-[4/5] place-items-center rounded-[2rem] bg-gradient-to-br from-rose-100 via-white to-sky-100 p-8 text-center shadow-2xl shadow-slate-900/15">
+              <div className="grid h-full w-full place-items-center bg-gradient-to-br from-rose-100 via-white to-sky-100 p-8 text-center">
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.3em] text-rose-700">
                     {heroDeckLabel}
