@@ -3,7 +3,6 @@ export type Language = "en" | "zh";
 export type Localized<T = string> = Record<Language, T>;
 
 export type SectionId =
-  | "about"
   | "education"
   | "experience"
   | "projects"
@@ -124,12 +123,12 @@ export const resume = {
       zh: "关闭详情",
     },
     overviewHeading: {
-      en: "Explore the resume",
+      en: "Explore My Background",
       zh: "浏览简历内容",
     },
     overviewIntro: {
-      en: "Start with a concise overview, then open each card for a deeper, animated detail layer.",
-      zh: "先快速了解整体背景，再点击卡片进入更完整的动态详情层。",
+      en: "Open each section to view education, experience, projects, skills, and contact details.",
+      zh: "点击下方卡片，查看教育背景、工作经历、精选项目、专业技能与联系方式。",
     },
     current: {
       en: "Current",
@@ -157,21 +156,6 @@ export const resume = {
     },
   },
   overviewSections: [
-    {
-      id: "about",
-      title: {
-        en: "About",
-        zh: "关于我",
-      },
-      eyebrow: {
-        en: "Profile",
-        zh: "个人概览",
-      },
-      summary: {
-        en: "Strategic Communication postgraduate with hands-on content, PR, and digital marketing experience across Australia and China.",
-        zh: "战略传播硕士在读，拥有澳中两地内容运营、公关执行与数字营销实践经验。",
-      },
-    },
     {
       id: "education",
       title: {

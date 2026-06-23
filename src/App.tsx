@@ -4,7 +4,6 @@ import { DetailPanel } from "./components/DetailPanel";
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 import { OverviewCard } from "./components/OverviewCard";
-import { BrandCard } from "./components/BrandCard";
 import { ProjectCard } from "./components/ProjectCard";
 import { SkillCloud } from "./components/SkillCloud";
 import { Timeline } from "./components/Timeline";
@@ -21,29 +20,6 @@ function App() {
 
   const renderDetailContent = () => {
     switch (activeSection) {
-      case "about":
-        return (
-          <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
-            <div className="space-y-5">
-              <BrandCard
-                className="lg:max-w-[420px]"
-                label={resume.ui.heroDeckLabel[language]}
-                text={resume.ui.heroDeckText[language]}
-                words={resume.ui.heroDeckWords[language]}
-              />
-            </div>
-            <div className="rounded-[1.5rem] bg-gradient-to-br from-slate-950 to-rose-900 p-8 text-white shadow-xl shadow-slate-900/15">
-              <p className="text-sm font-semibold uppercase tracking-[0.25em] text-rose-100/80">
-                {resume.profile.location[language]}
-              </p>
-              <h3 className="mt-8 text-4xl font-black">{displayName}</h3>
-              <p className="mt-4 text-lg font-semibold text-rose-100">{resume.profile.tagline[language]}</p>
-              <div className="mt-8 rounded-[1.25rem] border border-white/15 bg-white/10 p-5">
-                <p className="text-lg leading-9 text-slate-100">{resume.profile.summary[language]}</p>
-              </div>
-            </div>
-          </div>
-        );
       case "education":
         return (
           <Timeline
