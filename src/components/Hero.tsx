@@ -69,7 +69,7 @@ export function Hero({
         </motion.div>
 
         <motion.div
-          className="relative px-6 py-10 text-center font-['Inter','Helvetica_Neue',Arial,sans-serif] sm:px-10 lg:flex lg:flex-col lg:items-end lg:justify-center lg:py-16 lg:pl-10 lg:pr-[6.5%] lg:text-right xl:pr-[7.5%]"
+          className="relative px-6 py-10 text-center font-['Inter','Helvetica_Neue',Arial,sans-serif] sm:px-10 lg:flex lg:-translate-x-20 lg:flex-col lg:items-end lg:justify-center lg:py-16 lg:pl-10 lg:pr-[4.5vw] lg:text-right xl:-translate-x-24 xl:pr-[5vw]"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.15, duration: 0.75, ease: "easeOut" }}
