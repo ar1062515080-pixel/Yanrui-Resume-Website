@@ -138,7 +138,7 @@ export function Hero({
                 {contactLabel}
               </button>
               <a
-                className="h-14 rounded-full border border-[rgba(255,255,255,0.75)] bg-[rgba(255,255,255,0.85)] px-7 text-[18px] font-bold text-[#13213A] shadow-[0_12px_32px_rgba(7,17,38,0.08)] backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C75C7E]"
+                className="inline-flex h-14 items-center justify-center rounded-full border border-[rgba(255,255,255,0.75)] bg-[rgba(255,255,255,0.85)] px-7 text-[18px] font-bold text-[#13213A] no-underline shadow-[0_12px_32px_rgba(7,17,38,0.08)] backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C75C7E]"
                 download
                 href={cvHref}
               >

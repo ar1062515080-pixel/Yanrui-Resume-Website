@@ -68,7 +68,7 @@ export function Navbar({
             {contactLabel}
           </button>
           <a
-            className="hidden rounded-full bg-slate-950 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-slate-900/15 transition hover:-translate-y-0.5 hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-500 md:inline-flex"
+            className="hidden items-center justify-center rounded-full bg-[#071126] px-4 py-2 text-sm font-semibold text-white no-underline shadow-lg shadow-slate-900/15 transition hover:-translate-y-0.5 hover:bg-[#13213A] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-500 md:inline-flex"
             download
             href={cvHref}
           >
